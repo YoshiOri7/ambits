@@ -1,7 +1,7 @@
 import React            from 'react';
-import { Component }      
+import { Component }
                         from 'react';
-import { browserHistory } 
+import { browserHistory }
                         from 'react-router';
 
 import getMuiTheme      from 'material-ui/styles/getMuiTheme';
@@ -14,7 +14,7 @@ import { getJwt }       from '../login/loginCtrl.js'
 
 // Redux
 import { connect }      from 'react-redux';
-import { loadAmbits, updateTitle, updateCurDay }     
+import { loadAmbits, updateTitle, updateCurDay }
                         from '../_actions/ambit-actions';
 
 const styles = {
@@ -34,6 +34,14 @@ const muiTheme = getMuiTheme({
     accent1Color: deepOrange500,
   },
 });
+const noteText = {
+  color: '#f44842',
+  fontSize: 14,
+  paddingLeft: 20,
+  paddingRight: 20,
+}
+
+
 
 class LoginSplash extends Component {
   constructor(props) {
@@ -56,6 +64,8 @@ class LoginSplash extends Component {
       <div className="loginTitle" style={splashStyle}>
         <h1 className='title'>Ambitually</h1>
         <span>A Smarty Sprouts Production</span>
+        <div style={noteText}>Note: Ambitually is a mobile first application.</div>
+        <div style={noteText}>Please adjust your browser to mobile size for better experience.</div>
         {LoginModal}
       </div>
     </MuiThemeProvider>

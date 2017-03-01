@@ -120,7 +120,7 @@ export const getAllAmbits = function(callback) {
     url: url + '/ambits',
     contentType: 'application/json',
   }).then(function(response) {
-    //testing comment out 
+    //testing comment out
     // response.data.push( {
     //     refId: 1234,
     //     name: 'Gym',
@@ -155,7 +155,7 @@ export const checkinAmbit = function(ambit, successCb,errorCb) {
   if (navigator.geolocation) {
   /* geolocation is available */
   navigator.geolocation.getCurrentPosition(function(position) {
-    console.log(position.coords);
+    // console.log(position.coords);
     var coordinates = position.coords;
     if(validateLocation(ambit.coords, coordinates)) {
       console.log('valid');

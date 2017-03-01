@@ -18,6 +18,11 @@ const styleSpacing = {
 };
 
 const days = ['Su', 'M', 'Tu', 'W', 'Th', 'F', 'Sa'];
+const noteText = {
+  color: '#f44842',
+  fontSize: 12,
+  textAlign: 'left'
+}
 
 class AmbitWeekdays extends Component {
   constructor(props) {
@@ -27,8 +32,10 @@ class AmbitWeekdays extends Component {
   render() {
     return (
       <div style={divStyle}>
+       <div style={noteText}>Note: Users can only 'Check In' when they are in the vicinity of activity location.</div>
+
         {
-          days.map((day, index) => 
+          days.map((day, index) =>
             <FloatingActionButton
               backgroundColor={'purple'}
               mini={true}

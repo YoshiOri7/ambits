@@ -11,8 +11,11 @@ var ambitHelper = require('./ambitData/ambitHelper.js');
 
 // To use on Heroku, set the environment variable:
 // $ heroku set:config MONGOLAB_URL=mongodb://user:password@mongolabstuff
-var db = (process.env.MONGOLAB_URL || 'mongodb://localhost/ambits');
-mongoose.connect(db);
+// var db = (process.env.MONGOLAB_URL || 'mongodb://localhost/ambits');
+
+// var dbHost = 'mongodb://localhost/ambits';
+var dbHost = 'mongodb://database/ambits';
+mongoose.connect(dbHost);
 
 var Ambit = require('./ambitData/ambitSchema');
 var User  = require('./users/userModel');
@@ -105,6 +108,9 @@ app.get('/db', function(req, res, next) {
 });
 
 // To use on Heroku, must use port provided by process.env:
-var port = (process.env.PORT || 3000);
-app.listen(port);
-console.log('Server is now listening at port ' + port);
+// var port = (process.env.PORT || 3000);
+var port = 5000;
+app.listen(port, function(){
+  console.log('Server is now listening at port ' + port);
+});
+

@@ -87,8 +87,8 @@ class Login extends Component {
 
   render() {
     const signUp = this.state.isSigningUp;
-    const signUpField = signUp ? 
-      (<TextField 
+    const signUpField = signUp ?
+      (<TextField
         onChange={this.handleChange.bind(this,'username')}
         fullWidth={true}
         hintText='username' />) :
@@ -98,15 +98,15 @@ class Login extends Component {
       <RaisedButton
         label='Login'
         primary={!this.state.isSigningUp}
-        onTouchTap={(!signUp) ? 
-          this.handleLogin : 
+        onTouchTap={(!signUp) ?
+          this.handleLogin :
           this.toggleSignUp.bind(this)
         }
       />,
       <RaisedButton
         label='Signup'
         primary={this.state.isSigningUp}
-        onTouchTap={(signUp) ? 
+        onTouchTap={(signUp) ?
           this.handleSignUp :
           this.toggleSignUp.bind(this)
         }
@@ -115,6 +115,10 @@ class Login extends Component {
 
     const loginStyle = {
       marginTop: '10%'
+    }
+    const noteText = {
+      color: '#f44842',
+      fontSize: 12
     }
 
     return (
@@ -126,7 +130,7 @@ class Login extends Component {
         actions={standardActions}
         modal={true}
       >
-        <TextField 
+        <TextField
           onChange={this.handleChange.bind(this,'email')}
           fullWidth={true}
           hintText='email' />
@@ -138,6 +142,7 @@ class Login extends Component {
           type='password'
           errorText={this.state.submitError}
          />
+        <div style={noteText}>Please use 'guest' for email and password for demo</div>
       </Dialog>
     );
   }
